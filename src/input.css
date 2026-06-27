@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* ── Serif font stack: Cormorant Garamond (Google Fonts) with fallbacks ── */
+/* We'll load it via a <link> in index.html, but define the stack here */
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Garamond", "Georgia", "Times New Roman",
+    serif;
+}
+
+/* ── Global ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fafafa;
+}
+
+/* ── Selection ── */
+::selection {
+  background: #e5e5e5;
+  color: #171717;
+}
+
+/* ── Subtle link underlines ── */
+a {
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 3px;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "codedreamer06.github.io",
+  "version": "1.0.0",
+  "description": "Personal website of Abhinav",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i src/input.css -o index.css --minify",
+    "dev": "npx @tailwindcss/cli -i src/input.css -o index.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0"
+  }
+}
