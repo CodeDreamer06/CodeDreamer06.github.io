@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 /* ── Serif font stack: EB Garamond (Google Fonts) with fallbacks ── */
-/* We'll load it via a <link> in index.html, but define the stack here */
 
 @theme {
   --font-serif: "EB Garamond", "Latin Modern Roman", Georgia, serif;
+  --container-2xl: 42.5rem;
   --text-xs: 0.86rem;
   --text-xs--line-height: calc(1 / 0.75);
   --text-2xl: 1.72rem;
@@ -14,29 +14,220 @@
 /* ── Global ── */
 html {
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: #fafafa;
+  background: #fdfdfc;
+  color: #1a1a1a;
+  font-feature-settings: 'liga' 1, 'kern' 1, 'onum' 1;
+  font-variant-numeric: oldstyle-nums;
 }
 
-/* ── Main Paragraphs & Italics ── */
+/* ── Paragraph spacing ── */
 p {
-  color: #1A1A1A;
+  margin-bottom: 16px;
+}
+p:last-child {
+  margin-bottom: 0;
 }
 
+/* ── Italics ── */
 em, i, .italic {
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
 
-/* ── Selection ── */
+/* ── Selection (inverted) ── */
 ::selection {
-  background: #e5e5e5;
-  color: #171717;
+  background: #1a1a1a;
+  color: #fdfdfc;
 }
 
-/* ── Subtle link underlines ── */
+/* ── Section headings (numbered, paper-style) ── */
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 21px;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e4e2dd;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #a8a8a8;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+/* ── Entry rows (work / projects) ── */
+.entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 20px;
+  align-items: baseline;
+  margin-bottom: 28px;
+}
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-head {
+  font-weight: 500;
+  font-size: 19px;
+}
+.entry-head .org {
+  font-weight: 400;
+  color: #6b6b6b;
+  font-style: italic;
+}
+
+.entry-year {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: #6b6b6b;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  padding-top: 3px;
+}
+
+.entry-body {
+  grid-column: 1 / -1;
+  color: #2c2c2c;
+  font-size: 17.5px;
+  margin-top: 2px;
+}
+
+/* ── Definition list (currently section) ── */
+dl.facts {
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  gap: 10px 24px;
+  font-size: 17.5px;
+}
+dl.facts dt {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 10.5px;
+  letter-spacing: 0.11em;
+  color: #6b6b6b;
+  padding-top: 5px;
+}
+dl.facts dd {
+  color: #1a1a1a;
+}
+
+/* ── Footnote markers ── */
+sup {
+  font-size: 0.68em;
+  font-family: var(--font-mono);
+  vertical-align: super;
+  color: #6b6b6b;
+  padding-left: 1px;
+}
+
+/* ── Goals list ── */
+.goals-list {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+}
+.goals-list li {
+  margin-bottom: 12px;
+}
+.goals-list li:last-child {
+  margin-bottom: 0;
+}
+.goals-list li strong {
+  font-weight: 500;
+}
+.goals-list .detail {
+  display: block;
+  color: #6b6b6b;
+  font-size: 17px;
+}
+.goals-list ::marker {
+  color: #a8a8a8;
+}
+
+/* ── Principles list ── */
+.principles-list li {
+  margin-bottom: 12px;
+  padding-left: 28px;
+  position: relative;
+}
+.principles-list li:last-child {
+  margin-bottom: 0;
+}
+.principles-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #c8c8c8;
+}
+
+/* ── Links ── */
 a {
-  text-decoration-thickness: 0.5px;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+  text-decoration-color: #e4e2dd;
+  transition: text-decoration-color 120ms ease;
+}
+a:hover {
+  text-decoration-color: #1a1a1a;
+}
+
+/* ── Footer ── */
+footer {
+  margin-top: 96px;
+  padding-top: 24px;
+  border-top: 1px solid #e4e2dd;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #a8a8a8;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ── Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .entry {
+    grid-template-columns: 1fr;
+  }
+  .entry-year {
+    grid-column: 1;
+    padding-top: 0;
+  }
+  dl.facts {
+    grid-template-columns: 1fr;
+    gap: 2px 0;
+  }
+  dl.facts dt {
+    margin-top: 14px;
+    padding-top: 0;
+  }
+  dl.facts dt:first-child {
+    margin-top: 0;
+  }
+  footer {
+    flex-direction: column;
+    gap: 6px;
+  }
 }
