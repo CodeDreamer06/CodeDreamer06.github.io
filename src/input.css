@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
-/* ── Serif font stack: Cormorant Garamond (Google Fonts) with fallbacks ── */
+/* ── Serif font stack: EB Garamond (Google Fonts) with fallbacks ── */
 /* We'll load it via a <link> in index.html, but define the stack here */
 
 @theme {
-  --font-serif: "Cormorant Garamond", "Garamond", "Georgia", "Times New Roman",
-    serif;
+  --font-serif: "EB Garamond", "Latin Modern Roman", Georgia, serif;
+  --text-xs: 0.86rem;
+  --text-xs--line-height: calc(1 / 0.75);
+  --text-2xl: 1.72rem;
+  --text-2xl--line-height: calc(2 / 1.5);
 }
 
 /* ── Global ── */
@@ -15,6 +18,15 @@ html {
 
 body {
   background: #fafafa;
+}
+
+/* ── Main Paragraphs & Italics ── */
+p {
+  color: #1A1A1A;
+}
+
+em, i, .italic {
+  color: #6B6B6B;
 }
 
 /* ── Selection ── */

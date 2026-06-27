@@ -1,11 +1,8 @@
-# Abhinav's Personal Website
+# My Personal Website
 
-Personal website built with HTML and Tailwind CSS v4.
+Built with HTML and Tailwind CSS v4.
 
 ## Getting Started
-
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v20+)
 
 ### Installation
 Install the development dependencies (Tailwind CLI):
@@ -24,6 +21,3 @@ To compile and minify the CSS for deployment:
 ```bash
 npm run build
 ```
-
-## GitHub Pages Deployment
-Since GitHub Pages hosts the static `index.html` and `index.css` from the root, ensure you run `npm run build` to compile the CSS before committing and pushing your changes to the repository.
