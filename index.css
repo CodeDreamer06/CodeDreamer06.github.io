@@ -351,6 +351,9 @@ sup {
 .principles-list li:last-child {
   margin-bottom: 0;
 }
+.principles-list li strong {
+  font-weight: 500;
+}
 .principles-list li::before {
   content: "—";
   position: absolute;
