@@ -90,6 +90,12 @@ section h2 {
   font-style: italic;
 }
 
+.project-emoji {
+  display: inline-block;
+  margin-right: 6px;
+  text-decoration: none;
+}
+
 .entry-year {
   font-family: var(--font-mono);
   font-size: 11.5px;
