@@ -19,8 +19,8 @@
         />
         <script>
             (function () {
-                const theme = localStorage.getItem('theme') || 'light';
-                document.documentElement.setAttribute('data-theme', theme);
+                const theme = localStorage.getItem("theme") || "light";
+                document.documentElement.setAttribute("data-theme", theme);
             })();
         </script>
     </head>
@@ -28,14 +28,36 @@
         <div
             class="relative-container mx-auto max-w-2xl px-6 py-16 font-serif text-[17.2px] leading-relaxed antialiased"
         >
-            <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
+            <button
+                id="theme-toggle"
+                aria-label="Toggle dark mode"
+                class="theme-toggle"
+            >
                 <!-- Sun Icon -->
-                <svg class="sun-icon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                    class="sun-icon"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
                     <circle cx="12" cy="12" r="4"></circle>
-                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                    <path
+                        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+                    ></path>
                 </svg>
                 <!-- Moon Icon -->
-                <svg class="moon-icon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                    class="moon-icon"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
                     <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
                 </svg>
             </button>
@@ -107,7 +129,7 @@
                             rel="noopener"
                             >TrovoFi</a
                         >
-                        <span class="org">— Founding/Principal Engineer</span>
+                        <span class="org">— Founding Engineer</span>
                     </div>
                     <div class="entry-year">2026 — present</div>
                     <div class="entry-body">
@@ -477,12 +499,18 @@
         </div>
 
         <script>
-            document.getElementById('theme-toggle').addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-            });
+            document
+                .getElementById("theme-toggle")
+                .addEventListener("click", () => {
+                    const currentTheme =
+                        document.documentElement.getAttribute("data-theme");
+                    const newTheme = currentTheme === "dark" ? "light" : "dark";
+                    document.documentElement.setAttribute(
+                        "data-theme",
+                        newTheme,
+                    );
+                    localStorage.setItem("theme", newTheme);
+                });
         </script>
     </body>
 </html>
